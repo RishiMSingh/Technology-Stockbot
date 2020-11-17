@@ -1,0 +1,152 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!-- Greetings and Politeness -->
+<category> <pattern> HELLO </pattern>
+  <template>Hello I am your tech stock bot. What is your name?</template> </category>
+  
+<category> <pattern>MY NAME IS *</pattern> 
+ <template> Hello! How are you?<think><set name = "username"> <star/></set></think></template></category>  
+
+<category><pattern>I AM OK</pattern>
+ <template>Thats wonderful!<get name = "username"/>! Ask me a question about technology stocks?</template></category>
+
+<category> <pattern> HELLO * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI * </pattern>
+  <template><srai>HELLO</srai></template> </category> 
+  
+<category> <pattern> HOW ARE YOU </pattern>
+  <template>I'm functioning within normal parameters, thanks for asking.</template></category>
+  
+<category><pattern> I AM GOOD </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+
+<category><pattern> WHAT CAN WE DISCUSS ABOUT </pattern>
+  <template>We can discuss about technology stocks and their prices</template></category>
+  
+<category><pattern> WHAT CAN WE DISCUSS ABOUT </pattern>
+  <template>We can discuss about technology stocks and their prices</template></category>
+
+<category><pattern> WHAT CAN WE TALK ABOUT </pattern>
+  <template>We can discuss about technology stocks and their prices</template></category>
+
+<category><pattern> I AM GOOD </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+
+<category><pattern> I AM FINE </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+  
+<category><pattern> BYE </pattern>
+  <template>#0$Bye! Nice talking to you. You take care now.</template></category>
+
+<category><pattern> GOODBYE </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category><pattern> EXIT </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category> <pattern> THANKS </pattern>
+  <template>You are welcome.</template></category>
+
+<category> <pattern> THANK YOU </pattern>
+  <template><srai>THANKS</srai></template></category>
+
+<category> <pattern> CHEERS </pattern>
+  <template>Sure mate.</template></category>
+
+<category> <pattern> CHEERS * </pattern>
+  <template>Sure mate.</template></category>
+
+<category> <pattern> WHAT IS THE STOCK MARKET </pattern>
+  <template>The stock market refers to the collection of markets and exchanges  
+  where regular activities of buying, selling, and issuance of shares of 
+  publicly-held companies take place.</template></category>
+
+<category> <pattern> Oh OK! THEN WHAT IS A STOCK </pattern>
+  <template>A stock (also known as equity) is a security that represents the ownership of a fraction 
+  of a corporation. This entitles the owner of the stock to a proportion of the corporation's assets 
+  and profits equal to how much stock they own. Units of stock are called "shares."</template></category>
+  
+<category>
+    <pattern>WHICH STOCKS SHOULD I RESEARCH THIS MONTH</pattern>
+    <template><random><li>NortonLifeLock Inc</li>
+    <li>Xerox Holdings Corp</li>
+    <li>NCR Corp</li>
+    </random></template></category>
+
+    
+<category> <pattern> CAN YOU DEFINE INVESTING</pattern>
+  <template>The goal of investing is to gradually build wealth over an extended period of time through 
+  the buying and holding of a portfolio of stocks, baskets of stocks, mutual funds, bonds, and other 
+  investment instruments</template></category>
+  
+<category> <pattern> CAN YOU DEFINE TRADING</pattern>
+  <template>Trading involves more frequent transactions, such as the buying and selling of stocks, 
+  commodities, currency pairs, or other instruments. The goal is to generate returns that outperform 
+  buy-and-hold investing. While investors may be content with annual returns of 10% to 15%, traders 
+  might seek a 10% return each month</template></category>
+
+ 
+   
+
+<!-- Stocks web scrapping Yahoo finance   -->
+<category><pattern> TELL ME ABOUT * </pattern>
+  <template>#2$<star/></template></category>
+
+<category> <pattern> WHAT IS YOUR FAVOURITE STOCK </pattern>
+  <template>That is difficult! Stock prices change everyday. I don't have one.</template></category>
+  
+<category><pattern> WHAT IS THE * STOCK ABOUT </pattern>
+  <template>#2$<star/></template></category>
+  
+<category><pattern> WHAT IS * </pattern>
+  <template>#2$<star/></template></category>
+
+<category><pattern> CAN YOU GIVE ME INFORMATION ABOUT * </pattern>
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+  
+<category><pattern> CAN YOU GIVE ME SOME INFORMATION ABOUT * </pattern> 
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+
+<category><pattern> CAN YOU GIVE ME SOME INFORMATION OF * </pattern>
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+  
+<category><pattern> CAN YOU TELL ME ABOUT * </pattern>
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+
+<category><pattern> WHAT DOES * DO </pattern>
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+
+<category><pattern> WHY SHOULD I INVEST IN * </pattern>
+  <template><srai>TELL ME ABOUT <star/></srai></template></category>
+  
+
+<!--- Stocks web scrapping Yahoo finance Price -->
+<category><pattern> WHAT IS THE PRICE OF * </pattern>
+  <template>#1$<star index="1"/></template></category>
+  
+<category><pattern> TELL ME THE PRICE OF * </pattern>
+  <template><srai>WHAT IS THE PRICE OF <star/></srai></template></category>
+
+<category><pattern> WHATS THE PRICE OF * </pattern>
+  <template><srai>WHAT IS THE PRICE OF <star/></srai></template></category>
+
+  
+<category><pattern> HOW MUCH IS THE PRICE OF * </pattern>
+  <template><srai>WHAT IS THE PRICE OF <star/></srai></template></category>
+
+<category><pattern> CAN YOU TELL ME THE PRICE OF * </pattern>
+  <template><srai>WHAT IS THE PRICE OF <star/></srai></template></category>
+  
+<!--- Images of stocks -->
+<category><pattern> CAN YOU SHOW ME A CHART OF * </pattern>
+  <template>#3$<star/></template></category>
+<!-- Default reaction -->
+<category><pattern> * </pattern>
+  <template>#99$<star index="1"/></template></category>
+
+</aiml>
