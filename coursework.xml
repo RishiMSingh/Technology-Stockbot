@@ -1,6 +1,10 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
 <!-- Greetings and Politeness -->
+
+<category> <pattern> BONJOUR </pattern>
+  <template>Bonjour, mon nom est stock bot. quel est ton nom?</template> </category>
+
 <category> <pattern> HELLO </pattern>
   <template>Hello I am your tech stock bot. What is your name?</template> </category>
   
@@ -9,6 +13,19 @@
 
 <category><pattern>I AM OK</pattern>
  <template>Thats wonderful!<get name = "username"/>! Ask me a question about technology stocks?</template></category>
+
+ 
+<category><pattern>I AM NOT TOO BAD THANK YOU</pattern>
+ <template>Thats wonderful!<get name = "username"/>! Ask me a question about technology stocks?</template></category>
+ 
+<category><pattern>DO YOU HAVE ANY TIPS FOR ME</pattern>
+ <template>Yes I do<get name = "username"/>! Have you heard about bitcoin</template></category>
+
+<category><pattern>YES I KNOW BITCOIN</pattern>
+ <template>Well<get name = "username"/> the prices of bitcoin is soaring and you should look into dodgecoin</template></category>
+ 
+<category><pattern>NO I HAVE NOT HEAD OF BITCOIN</pattern>
+ <template>Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto</template></category>
 
 <category> <pattern> HELLO * </pattern>
   <template><srai>HELLO</srai></template> </category>
@@ -22,22 +39,31 @@
 <category> <pattern> HOW ARE YOU </pattern>
   <template>I'm functioning within normal parameters, thanks for asking.</template></category>
   
+<category> <pattern> ARE YOU OKAY </pattern>
+  <template>I'm functioning within normal parameters, thanks for asking.</template></category>
+  
 <category><pattern> I AM GOOD </pattern>
   <template>That's good to know. What would you like to discuss about?</template></category>
 
-<category><pattern> WHAT CAN WE DISCUSS ABOUT </pattern>
-  <template>We can discuss about technology stocks and their prices</template></category>
   
 <category><pattern> WHAT CAN WE DISCUSS ABOUT </pattern>
   <template>We can discuss about technology stocks and their prices</template></category>
 
+
 <category><pattern> WHAT CAN WE TALK ABOUT </pattern>
   <template>We can discuss about technology stocks and their prices</template></category>
+  
+<category><pattern> WHAT WE CAN TALK ABOUT </pattern>
+  <template>We can discuss about technology stocks and their prices</template></category>
+
 
 <category><pattern> I AM GOOD </pattern>
   <template>That's good to know. What would you like to discuss about?</template></category>
 
 <category><pattern> I AM FINE </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+
+<category><pattern> FINE </pattern>
   <template>That's good to know. What would you like to discuss about?</template></category>
   
 <category><pattern> BYE </pattern>
@@ -66,7 +92,7 @@
   where regular activities of buying, selling, and issuance of shares of 
   publicly-held companies take place.</template></category>
 
-<category> <pattern> Oh OK! THEN WHAT IS A STOCK </pattern>
+<category> <pattern> OH OK! THEN WHAT IS A STOCK </pattern>
   <template>A stock (also known as equity) is a security that represents the ownership of a fraction 
   of a corporation. This entitles the owner of the stock to a proportion of the corporation's assets 
   and profits equal to how much stock they own. Units of stock are called "shares."</template></category>
@@ -77,9 +103,17 @@
     <li>Xerox Holdings Corp</li>
     <li>NCR Corp</li>
     </random></template></category>
-
     
-<category> <pattern> CAN YOU DEFINE INVESTING</pattern>
+    
+<category>
+    <pattern>WHAT STOCKS SHOULD I LOOK FOR THIS MONTH</pattern>
+    <template><random><li>NortonLifeLock Inc</li>
+    <li>Xerox Holdings Corp</li>
+    <li>NCR Corp</li>
+    </random></template></category>
+
+  
+<category> <pattern> CAN YOU DEFINE THE INVESTING</pattern>
   <template>The goal of investing is to gradually build wealth over an extended period of time through 
   the buying and holding of a portfolio of stocks, baskets of stocks, mutual funds, bonds, and other 
   investment instruments</template></category>
@@ -89,6 +123,15 @@
   commodities, currency pairs, or other instruments. The goal is to generate returns that outperform 
   buy-and-hold investing. While investors may be content with annual returns of 10% to 15%, traders 
   might seek a 10% return each month</template></category>
+  
+<category> <pattern> YOU CAN DEFINE TRADING</pattern>
+  <template>Trading involves more frequent transactions, such as the buying and selling of stocks, 
+  commodities, currency pairs, or other instruments. The goal is to generate returns that outperform 
+  buy-and-hold investing. While investors may be content with annual returns of 10% to 15%, traders 
+  might seek a 10% return each month</template></category>
+  
+  
+<!--  10 new statements stage 4   -->
 
  
    
@@ -129,6 +172,9 @@
 <category><pattern> WHAT IS THE PRICE OF * </pattern>
   <template>#1$<star index="1"/></template></category>
   
+<category><pattern> WHAT IS * PRICE </pattern>
+  <template>#1$<star index="1"/></template></category>
+  
 <category><pattern> TELL ME THE PRICE OF * </pattern>
   <template><srai>WHAT IS THE PRICE OF <star/></srai></template></category>
 
@@ -145,6 +191,74 @@
 <!--- Images of stocks -->
 <category><pattern> CAN YOU SHOW ME A CHART OF * </pattern>
   <template>#3$<star/></template></category>
+
+<!--- CNN of brands -->
+<category><pattern> CAN I UPLOAD AN IMAGE </pattern>
+ <template>#4$<star/></template></category> 
+ 
+ <category><pattern> YOU CAN UPLOAD A PICTURE </pattern>
+ <template>#4$<star/></template></category> 
+
+<category><pattern> WHAT IS THIS IMAGE </pattern>
+ <template>#4$<star/></template></category> 
+
+<category><pattern> WHAT IMAGE IS THIS * </pattern>
+ <template>#5$<star/></template></category> 
+ 
+<category><pattern> CAN YOU TELL ME WHICH BRAND * IS </pattern>
+ <template>#5$<star/></template></category> 
+ 
+<category><pattern> CAN YOU OPEN * </pattern>
+ <template>#5$<star/></template></category> 
+ 
+<category><pattern> CAN YOU GIVE ME A BRAND </pattern>
+ <template>#6$<star/></template></category>
+ 
+<category><pattern> CHOOSE A RANDOM BRAND FOR ME </pattern>
+ <template>#6$<star/></template></category>
+
+<category><pattern> CAN YOU RUN AN IMAGE THROUGH THE VGG16 MODEL </pattern>
+ <template>#7$<star/></template></category> 
+ 
+<category><pattern> LET ME RUN AN IMAGE THROUGH VGG16 </pattern>
+ <template>#7$<star/></template></category> 
+ 
+<category><pattern> RUN AN IMAGE THROUGH VGG16 </pattern>
+ <template>#7$<star/></template></category> 
+ 
+<category><pattern> LET ME RUN AN IMAGE THROUGH RESNET </pattern>
+ <template>#8$<star/></template></category> 
+
+<category><pattern> RUN AN IMAGE THROUGH RESNET </pattern>
+ <template>#8$<star/></template></category> 
+ 
+<category><pattern> CAN YOU RUN AN IMAGE THROUGH THE RESNET MODEL </pattern>
+ <template>#8$<star/></template></category> 
+ 
+<category><pattern> PREDICT AN IMAGE USING THE MOBILENET MODEL </pattern>
+ <template>#9$<star/></template></category> 
+    
+<!-- Logic input -->
+
+<category><pattern> I KNOW THAT * IS *</pattern>
+  <template>#31$<star index="1"/> is <star index="2"/></template></category>  
+
+<category><pattern> CHECK THAT * IS *</pattern>
+  <template>#33$<star index="1"/> is <star index="2"/></template></category>  
+  
+<category><pattern> CAN I SEE PREDICTION OF * STOCK PRICES</pattern>
+  <template>#3$<star/></template></category>
+
+ 
+<category><pattern> ANALYZE * </pattern>
+ <template>#35$<star/></template></category> 
+ 
+<category><pattern> CAN YOU ANALYSE THE ARTICLE * </pattern>
+ <template>#36$<star/></template></category> 
+
+<category><pattern> DETECT A RANDOM BRAND</pattern>
+ <template>#37$<star/></template></category> 
+
 <!-- Default reaction -->
 <category><pattern> * </pattern>
   <template>#99$<star index="1"/></template></category>
